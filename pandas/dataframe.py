@@ -41,3 +41,20 @@ print(dataframe.loc[1,"Column 2"])
 dataframe.loc[1,"Column 2"] = "&"
 print(dataframe.loc[1,"Column 2"])
 
+
+
+print("\n\n Exportando para outros formatos")
+json = dataframe.to_json()
+dataframe.to_csv("C:\\Users\\henri\\OneDrive\\Documentos\\Programas\\Python\\Python_Data_Analysis\\pandas\\dataframe.csv")
+dataframe.to_excel("dataframe.xlsx",sheet_name='Sheet_name_1')
+
+print(json)
+
+print("\n\n Importando de vários formatos")
+jsonDf = pd.read_json(json)
+csvDf = pd.read_csv("C:\\Users\\henri\\OneDrive\\Documentos\\Programas\\Python\\Python_Data_Analysis\\pandas\\dataframe.csv")
+excelDf = pd.read_excel("dataframe.xlsx")
+
+print(jsonDf)
+print(csvDf)
+print(excelDf)
